@@ -136,6 +136,19 @@ antigen bundle zpm-zsh/undollar
 
 source $HOME/.src/emoji-cli/emoji-cli.zsh
 
+antigen bundle 'wfxr/forgit'
+FORGIT_FZF_DEFAULT_OPTS="
+--exact
+--border
+--cycle
+--reverse
+--height '80%'
+"
+
+antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle evanthegrayt/vagrant-box-wrapper.git
+antigen bundle nocttuam/autodotenv
+
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -177,3 +190,5 @@ alias src="pushd $HOME/.src"
 VHOSTS=/var/www/vhosts
 alias vhosts="pushd $VHOSTS"
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
