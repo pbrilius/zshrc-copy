@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/povilasb/.oh-my-zsh"
+export ZSH="/home/povilasbrilius/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -148,6 +148,8 @@ FORGIT_FZF_DEFAULT_OPTS="
 antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle evanthegrayt/vagrant-box-wrapper.git
 antigen bundle nocttuam/autodotenv
+
+antigen bundle psprint/zsh-morpho
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
