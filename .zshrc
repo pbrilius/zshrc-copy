@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64 -march bdver4"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -151,7 +151,7 @@ antigen bundle nocttuam/autodotenv
 
 antigen bundle psprint/zsh-morpho
 
-zstyle ":morpho" screen-saver "zblank," # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
+zstyle ":morpho" screen-saver "zblank" # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
                                         # this  can also be a command, e.g. "cmatrix"
 zstyle ":morpho" arguments "-s"         # arguments given to screen saver program; -s - every key press ends
 zstyle ":morpho" delay "14"            # 5 minutes before screen saver starts
