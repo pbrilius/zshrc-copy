@@ -147,15 +147,14 @@ FORGIT_FZF_DEFAULT_OPTS="
 
 antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle evanthegrayt/vagrant-box-wrapper.git
-antigen bundle nocttuam/autodotenv
 
 antigen bundle psprint/zsh-morpho
 
 zstyle ":morpho" screen-saver "zblank" # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
                                         # this  can also be a command, e.g. "cmatrix"
 zstyle ":morpho" arguments "-s"         # arguments given to screen saver program; -s - every key press ends
-zstyle ":morpho" delay "14"            # 5 minutes before screen saver starts
-zstyle ":morpho" check-interval "5"    # check every 1 minute if to run screen saver
+zstyle ":morpho" delay "60"            # 5 minutes before screen saver starts
+zstyle ":morpho" check-interval "15"    # check every 1 minute if to run screen saver
 
 
 # Syntax highlighting bundle.
