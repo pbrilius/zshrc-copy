@@ -124,7 +124,7 @@ antigen bundle command-not-found
 antigen bundle zpm-zsh/mysql-colorize
 antigen bundle voronkovich/mysql.plugin.zsh
 antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle voronkovich/apache2.plugin.zsh
+# antigen bundle voronkovich/apache2.plugin.zsh
 antigen bundle webyneter/docker-aliases.git
 antigen bundle sroze/docker-compose-zsh-plugin
 antigen bundle unixorn/docker-helpers.zshplugin
@@ -195,7 +195,7 @@ alias src="pushd $HOME/.src"
 
 
 # Target market virtual hosts
-VHOSTS=/var/www/vhosts
+VHOSTS=/srv/www/vhosts
 alias vhosts="pushd $VHOSTS"
 
 
