@@ -37,7 +37,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=4
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -105,8 +105,8 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
 
 source $HOME/antigen.zsh
 
@@ -148,13 +148,13 @@ FORGIT_FZF_DEFAULT_OPTS="
 antigen bundle ael-code/zsh-colored-man-pages
 antigen bundle evanthegrayt/vagrant-box-wrapper.git
 
-antigen bundle psprint/zsh-morpho
+# antigen bundle psprint/zsh-morpho
 
-zstyle ":morpho" screen-saver "zblank" # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
+# zstyle ":morpho" screen-saver "zblank" # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
                                         # this  can also be a command, e.g. "cmatrix"
-zstyle ":morpho" arguments "-s"         # arguments given to screen saver program; -s - every key press ends
-zstyle ":morpho" delay "60"            # 5 minutes before screen saver starts
-zstyle ":morpho" check-interval "15"    # check every 1 minute if to run screen saver
+# zstyle ":morpho" arguments "-s"         # arguments given to screen saver program; -s - every key press ends
+# zstyle ":morpho" delay "60"            # 5 minutes before screen saver starts
+# zstyle ":morpho" check-interval "15"    # check every 1 minute if to run screen saver
 
 
 # Syntax highlighting bundle.
@@ -189,9 +189,14 @@ PATH=$PATH:$HOME/.apps
 PATH=$PATH:$HOME/.config/composer/vendor/bin
 PATH=$PATH:$HOME/tools
 
+# Virtulization technology
+PATH=$PATH:$HOME/.apps/docker
+PATH=$PATH:$HOME/.apps/docker-rootless-extras
+
 alias src="pushd $HOME/.src"
 
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# Temporal failure
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 
 # Target market virtual hosts
@@ -200,3 +205,13 @@ alias vhosts="pushd $VHOSTS"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Temporal phpbrew /dev/stderr stream fix
+# phpbrew use php-cli-latest
+
+# Additional virtualization on docker-ce
+# WARNING: systemd not found. You have to remove XDG_RUNTIME_DIR manually on every logout.
+export XDG_RUNTIME_DIR=/home/povilasbrilius/.docker/run
+export PATH=/home/povilasbrilius/.apps/docker-rootless-extras:$PATH
+export DOCKER_HOST=unix:///home/povilasbrilius/.docker/run/docker.sock
+
