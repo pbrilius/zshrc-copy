@@ -105,7 +105,7 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nano ~/.zshrc"
+alias zshconfig="atom-nightly ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
 source $HOME/antigen.zsh
@@ -127,7 +127,7 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle voronkovich/apache2.plugin.zsh
 antigen bundle webyneter/docker-aliases.git
 antigen bundle sroze/docker-compose-zsh-plugin
-antigen bundle unixorn/docker-helpers.zshplugin
+# antigen bundle unixorn/docker-helpers.zshplugin
     antigen bundle voronkovich/phpcs.plugin.zsh
 antigen bundle voronkovich/phpunit.plugin.zsh
 antigen bundle molovo/tipz
@@ -195,8 +195,7 @@ PATH=$PATH:$HOME/.apps/docker-rootless-extras
 
 alias src="pushd $HOME/.src"
 
-# Temporal failure
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 
 # Target market virtual hosts
