@@ -213,5 +213,6 @@ export PATH=$PATH:$HOME/.apps/docker
 export PATH=$PATH:$HOME/.apps/docker-rootless-extras
 
 ## Catholic Church semi-reappraisal
+export XDG_RUNTIME_DIR=/home/povilas/.docker/run
 export PATH=/home/povilas/.apps/docker-rootless-extras:$PATH
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
