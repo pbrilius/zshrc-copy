@@ -209,7 +209,9 @@ alias vhosts="pushd $VHOSTS"
 # phpbrew use php-cli-latest
 
 # Additional virtualization on docker-ce
-# WARNING: systemd not found. You have to remove XDG_RUNTIME_DIR manually on every logout.
-export XDG_RUNTIME_DIR=/home/povilasbrilius/.docker/run
-export PATH=/home/povilasbrilius/.apps/docker-rootless-extras:$PATH
-export DOCKER_HOST=unix:///home/povilasbrilius/.docker/run/docker.sock
+export PATH=$PATH:$HOME/.apps/docker
+export PATH=$PATH:$HOME/.apps/docker-rootless-extras
+
+## Catholic Church semi-reappraisal
+export PATH=/home/povilas/.apps/docker-rootless-extras:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
