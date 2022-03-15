@@ -125,7 +125,7 @@ antigen bundle zpm-zsh/mysql-colorize
 antigen bundle voronkovich/mysql.plugin.zsh
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle voronkovich/apache2.plugin.zsh
-antigen bundle webyneter/docker-aliases.git
+# antigen bundle webyneter/docker-aliases.git
 antigen bundle sroze/docker-compose-zsh-plugin
 # antigen bundle unixorn/docker-helpers.zshplugin
     antigen bundle voronkovich/phpcs.plugin.zsh
@@ -213,4 +213,3 @@ alias vhosts="pushd $VHOSTS"
 export XDG_RUNTIME_DIR=/home/povilasbrilius/.docker/run
 export PATH=/home/povilasbrilius/.apps/docker-rootless-extras:$PATH
 export DOCKER_HOST=unix:///home/povilasbrilius/.docker/run/docker.sock
-
