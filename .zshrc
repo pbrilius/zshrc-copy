@@ -134,7 +134,7 @@ antigen bundle molovo/tipz
 antigen bundle KasperChristensen/mylocation
 antigen bundle zpm-zsh/undollar
 
-source $HOME/.src/emoji-cli/emoji-cli.zsh
+source $HOME/src/emoji-cli/emoji-cli.zsh
 
 antigen bundle 'wfxr/forgit'
 FORGIT_FZF_DEFAULT_OPTS="
@@ -184,16 +184,16 @@ alias lt='ls --tree'
 
 
 # ECTS Economics & Business Economics
-PATH=$PATH:$HOME/.bin
-PATH=$PATH:$HOME/.apps
+PATH=$PATH:$HOME/bin
+PATH=$PATH:$HOME/apps
 PATH=$PATH:$HOME/.config/composer/vendor/bin
 PATH=$PATH:$HOME/tools
 
 # Virtulization technology
-PATH=$PATH:$HOME/.apps/docker
-PATH=$PATH:$HOME/.apps/docker-rootless-extras
+PATH=$PATH:$HOME/bin/docker
+PATH=$PATH:$HOME/bin/docker-rootless-extras
 
-alias src="pushd $HOME/.src"
+alias src="pushd $HOME/src"
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
@@ -208,11 +208,3 @@ alias vhosts="pushd $VHOSTS"
 # Temporal phpbrew /dev/stderr stream fix
 # phpbrew use php-cli-latest
 
-# Additional virtualization on docker-ce
-export PATH=$PATH:$HOME/.apps/docker
-export PATH=$PATH:$HOME/.apps/docker-rootless-extras
-
-## Catholic Church semi-reappraisal
-export XDG_RUNTIME_DIR=/home/povilas/.docker/run
-export PATH=/home/povilas/.apps/docker-rootless-extras:$PATH
-export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
