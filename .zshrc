@@ -134,7 +134,7 @@ antigen bundle molovo/tipz
 antigen bundle KasperChristensen/mylocation
 antigen bundle zpm-zsh/undollar
 
-source $HOME/src/emoji-cli/emoji-cli.zsh
+source $HOME/.src/emoji-cli/emoji-cli.zsh
 
 antigen bundle 'wfxr/forgit'
 FORGIT_FZF_DEFAULT_OPTS="
@@ -184,16 +184,16 @@ alias lt='ls --tree'
 
 
 # ECTS Economics & Business Economics
-PATH=$PATH:$HOME/bin
-PATH=$PATH:$HOME/apps
+PATH=$PATH:$HOME/.bin
+PATH=$PATH:$HOME/.apps
 PATH=$PATH:$HOME/.config/composer/vendor/bin
 PATH=$PATH:$HOME/tools
 
 # Virtulization technology
-PATH=$PATH:$HOME/bin/docker
-PATH=$PATH:$HOME/bin/docker-rootless-extras
+PATH=$PATH:$HOME/.bin/docker
+PATH=$PATH:$HOME/.bin/docker-rootless-extras
 
-alias src="pushd $HOME/src"
+alias src="pushd $HOME/.src"
 
 [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
@@ -209,8 +209,13 @@ alias vhosts="pushd $VHOSTS"
 # phpbrew use php-cli-latest
 
 # docker.io manual binaries enabled labour move
-export PATH=/home/povilas/bin/docker-rootless-extras:$PATH
-export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
+# export PATH=/home/povilas/bin/docker-rootless-extras:$PATH
+# export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
 
 # NPM frontend node.js behaviour
-export PATH=$PATH:$HOME/bin/node-v16.14.2-linux-x64/bin
+# export PATH=$PATH:$HOME/bin/node-v16.14.2-linux-x64/bin
+
+# WARNING: systemd not found. You have to remove XDG_RUNTIME_DIR manually on every logout.
+export XDG_RUNTIME_DIR=/home/povilas/.docker/run
+export PATH=/home/povilas/.bin/docker-rootless-extras:$PATH
+export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
