@@ -161,7 +161,8 @@ antigen bundle evanthegrayt/vagrant-box-wrapper.git
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme romkatv/powerlevel10k
+antigen bundle reobin/typewritten@main
+# antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
@@ -204,18 +205,3 @@ alias vhosts="pushd $VHOSTS"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Temporal phpbrew /dev/stderr stream fix
-# phpbrew use php-cli-latest
-
-# docker.io manual binaries enabled labour move
-# export PATH=/home/povilas/bin/docker-rootless-extras:$PATH
-# export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
-
-# NPM frontend node.js behaviour
-# export PATH=$PATH:$HOME/bin/node-v16.14.2-linux-x64/bin
-
-# WARNING: systemd not found. You have to remove XDG_RUNTIME_DIR manually on every logout.
-export XDG_RUNTIME_DIR=/home/povilas/.docker/run
-export PATH=/home/povilas/.bin/docker-rootless-extras:$PATH
-export DOCKER_HOST=unix:///home/povilas/.docker/run/docker.sock
