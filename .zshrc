@@ -5,6 +5,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -105,7 +112,7 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="atom-nightly ~/.zshrc"
+alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 
 source $HOME/antigen.zsh
@@ -162,7 +169,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 antigen bundle reobin/typewritten@main
-# antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
@@ -174,7 +180,7 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias ls='lsd'
 
@@ -186,7 +192,7 @@ alias lt='ls --tree'
 
 # ECTS Economics & Business Economics
 PATH=$PATH:$HOME/.bin
-PATH=$PATH:$HOME/.apps
+# PATH=$PATH:$HOME/.apps
 PATH=$PATH:$HOME/.config/composer/vendor/bin
 PATH=$PATH:$HOME/tools
 
@@ -196,12 +202,30 @@ PATH=$PATH:$HOME/.bin/docker-rootless-extras
 
 alias src="pushd $HOME/.src"
 
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
 
 
 # Target market virtual hosts
 VHOSTS=/var/www/vhosts
 alias vhosts="pushd $VHOSTS"
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# node-js apprehension &comprehension
+export PATH=$PATH:$HOME/.apps/node-v18.9.1-linux-x64/bin
+
+# Atom meta-physics projects sift to philosophy cathedral
+VS_PROJECTS="$HOME/.vscode-ones"
+
+# psyche-friendly MS VS Code ones
+alias vsprojects='cd $VS_PROJECTS'
+alias webcrawler='php $VS_PROJECTS/enigma-tsunami/design.php'
+alias web-semantics='cd $VS_PROJECTS/web-semantics'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# GDP $HOME design interiors
+alias dns-webcrawler='pushd $VHOSTS/dns-crawler'
+alias dns-webscrapper='pushd $VHOSTS/dns-scrapper'
+alias dns-webexpress='pushd $VHOSTS/dns-express'
