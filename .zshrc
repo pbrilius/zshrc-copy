@@ -196,34 +196,22 @@ PATH=$PATH:$HOME/.bin
 PATH=$PATH:$HOME/.config/composer/vendor/bin
 PATH=$PATH:$HOME/tools
 
-# Virtulization technology
-PATH=$PATH:$HOME/.bin/docker
-PATH=$PATH:$HOME/.bin/docker-rootless-extras
-
 alias src="pushd $HOME/.src"
 
-# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
-
-# Target market virtual hosts
-VHOSTS=/var/www/vhosts
-alias vhosts="pushd $VHOSTS"
+# Target market virtually hosted web apps
+WGUESTS=/var/www/wguests
+alias wguests="pushd $WGUESTS"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # node-js apprehension &comprehension
-export PATH=$PATH:$HOME/.apps/node-v18.9.1-linux-x64/bin
+export PATH=$PATH:$HOME/.apps/node-v18.12.1-linux-x64/bin
 
 # Atom meta-physics projects sift to philosophy cathedral
-VS_PROJECTS="$HOME/.vscode-ones"
+VS_PROJECTS="$HOME/.vscode-projects"
 
 # psyche-friendly MS VS Code ones
-alias vsprojects='cd $VS_PROJECTS'
-alias webcrawler='php $VS_PROJECTS/enigma-tsunami/design.php'
-alias web-semantics='cd $VS_PROJECTS/web-semantics'
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias vsprojects='pushd $VS_PROJECTS'
 
 # GDP $HOME design interiors
 alias dns-webcrawler='pushd $VHOSTS/dns-crawler'
