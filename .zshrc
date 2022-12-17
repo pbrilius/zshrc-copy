@@ -167,8 +167,8 @@ antigen bundle evanthegrayt/vagrant-box-wrapper.git
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen bundle reobin/typewritten@main
+# Load the CLI theme.
+antigen theme agnoster/agnoster-zsh-theme
 
 # Tell Antigen that you're done.
 antigen apply
@@ -199,13 +199,13 @@ PATH=$PATH:$HOME/tools
 alias src="pushd $HOME/.src"
 
 # Target market virtually hosted web apps
-WGUESTS=/var/www/wguests
-alias wguests="pushd $WGUESTS"
+VHOSTS=/var/www/vhosts
+alias vhosts="pushd $VHOSTS"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # node-js apprehension &comprehension
-export PATH=$PATH:$HOME/.apps/node-v18.12.1-linux-x64/bin
+export PATH=$PATH:$HOME/.apps/node-v19.1.0-linux-x64/bin
 
 # Atom meta-physics projects sift to philosophy cathedral
 VS_PROJECTS="$HOME/.vscode-projects"
@@ -217,3 +217,6 @@ alias vsprojects='pushd $VS_PROJECTS'
 alias dns-webcrawler='pushd $VHOSTS/dns-crawler'
 alias dns-webscrapper='pushd $VHOSTS/dns-scrapper'
 alias dns-webexpress='pushd $VHOSTS/dns-express'
+
+# $ZSH prerequisites #SCSS
+export FORGIT_FZF_DEFAULT_OPTS
