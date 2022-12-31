@@ -22,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="minima"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -167,9 +167,6 @@ antigen bundle evanthegrayt/vagrant-box-wrapper.git
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the CLI theme.
-antigen theme agnoster/agnoster-zsh-theme
-
 # Tell Antigen that you're done.
 antigen apply
 
@@ -207,12 +204,6 @@ alias vhosts="pushd $VHOSTS"
 # node-js apprehension &comprehension
 export PATH=$PATH:$HOME/.apps/node-v19.1.0-linux-x64/bin
 
-# Atom meta-physics projects sift to philosophy cathedral
-VS_PROJECTS="$HOME/.vscode-projects"
-
-# psyche-friendly MS VS Code ones
-alias vsprojects='pushd $VS_PROJECTS'
-
 # GDP $HOME design interiors
 alias dns-webcrawler='pushd $VHOSTS/dns-crawler'
 alias dns-webscrapper='pushd $VHOSTS/dns-scrapper'
@@ -220,3 +211,43 @@ alias dns-webexpress='pushd $VHOSTS/dns-express'
 
 # $ZSH prerequisites #SCSS
 export FORGIT_FZF_DEFAULT_OPTS
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
+CFLAGS="-Og -march=bdver4 -pipe"
+CXXFLAGS=$CFLAGS
+    export PHPBREW_SET_PROMPT=1
+    export PHPBREW_RC_ENABLE=1
+
+# wiki-wicked weaponized threaded pony tail threat
+export WIKI=$HOME/.wiki
+alias wiki="pushd $WIKI"
+
+MINIMA_PROMPT_ORDER=(
+  user
+  host
+  dir
+  git
+  node
+  npm
+  php
+  line_sep
+  char
+)
+
+	eval "$(starship init zsh)"
+
+antigen bundle zpm-zsh/colorize
+antigen bundle sineto/web-search
+antigen bundle le0me55i/zsh-systemd
+antigen bundle gepoch/oh-my-zsh-dirstack
+antigen bundle gryffyn/mouse-status
+antigen bundle oldratlee/hacker-quotes
+antigen bundle brokendisk/dune-quotes
+antigen bundle owenvoke/quoter-zsh
+antigen bundle voronkovich/phpunit.plugin.zsh
+antigen bundle yous/vanilli.sh
+
+# antigen IEEE - springer-link extra extended expansion
+DOCS=$HOME/Dokumentai
+WSPACES=$DOCS/vs-code-workspaces
+alias wcode="pushd $WSPACES"
