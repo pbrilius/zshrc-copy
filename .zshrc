@@ -159,11 +159,6 @@ antigen bundle brokendisk/dune-quotes
 antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
-# Apple Inc. patents overseas
-    source /home/povilasbrilius/.phpbrew/bashrc
-
-antigen theme zakaziko99/agnosterzak-ohmyzsh-theme
-
 antigen apply
 
 
@@ -219,15 +214,8 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# EULA ROI Ee pbgroup.eu Seagates
-PATH=$PATH:/opt/mysql-ee/bin
-
 # Lenovo Kingston SD card adapter
 	eval "$(starship init zsh)"
-
-# pbgroupė.lt franchise SaaS partners
-PARTNERS="$HOME/.config/pbgroup"
-source $PARTNERS/friends.zsh
 
 # GDP - TQM dormroom tenant apps
 APPS=$HOME/.apps
@@ -309,3 +297,9 @@ antigen bundle trystan2k/zsh-tab-title
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
+
+eval "$(atuin init zsh)"
+
+# WDDX BDD pbgrupė.lt
+PROJECTS=$HOME/.projects
+alias optimus_prime="pushd $PROJECTS/optimus-prime.fdd.wddx"
