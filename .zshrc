@@ -303,3 +303,5 @@ eval "$(atuin init zsh)"
 # WDDX BDD pbgrupė.lt
 PROJECTS=$HOME/.projects
 alias optimus_prime="pushd $PROJECTS/optimus-prime.fdd.wddx"
+
+eval "$(atuin init zsh)"
