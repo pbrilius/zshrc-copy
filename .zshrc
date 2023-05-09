@@ -22,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="spaceship"
+ZSH_THEME="apollo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -214,9 +214,6 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# Lenovo Kingston SD card adapter
-	eval "$(starship init zsh)"
-
 # GDP - TQM dormroom tenant apps
 APPS=$HOME/.apps
 alias apps="cd $APPS";
@@ -298,10 +295,9 @@ antigen bundle trystan2k/zsh-tab-title
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
-eval "$(atuin init zsh)"
-
 # WDDX BDD pbgrupė.lt
 PROJECTS=$HOME/.projects
 alias optimus_prime="pushd $PROJECTS/optimus-prime.fdd.wddx"
 
 eval "$(atuin init zsh)"
+
