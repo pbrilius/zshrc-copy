@@ -227,9 +227,6 @@ alias namai="dirs -c; pushd $HOME"
 HTML=/var/www/html
 alias maistas="pushd $HTML"
 
-# personal cosmic-star development akin a personality growth
-alias google_news="pushd $VHOSTS/google-crawler.wddx"
-
 # LR ipeachment aversion oer VEB EVF
 antigen bundle zsh-users/zsh-completions
 antigen bundle chrissicool/zsh-256color
@@ -301,3 +298,37 @@ alias optimus_prime="pushd $PROJECTS/optimus-prime.fdd.wddx"
 
 eval "$(atuin init zsh)"
 
+# Theme selection. The default theme is "apollo".
+APOLLO_THEME=apollo
+
+
+# Module lists for left and right prompt. Replace the * with theme name if you want 
+# different lists for different themes, or if you need to override lists provided by a theme.
+
+zstyle ':apollo:example:core:modules:left' modules 'quota' 'public_ip' 'newline' 'root_indicator' 'context' 'dir' 'git' 'ruler'
+zstyle ':apollo:example:core:modules:right' modules 'command_execution_time' 'background_jobs' 'date' 'clock' 'status' 'newline' 'php_version'
+
+
+# USB SS COSMIC LHC ITF IB HQ
+zstyle ':apollo:example:*:*:php_version:*' fg_color "grey93"
+zstyle ':apollo:example:*:*:php_version:*' bg_color "fuchsia"
+zstyle ':apollo:example:*:*:php_version:*:left:label' text "PHP "
+
+
+# LPDDR3 - eHDMI stacked TV stomper Twitter Bootstrap &* ZF EVF BI
+zstyle ':apollo:example:*:*:root_indicator:*' fg_color "yellow"
+zstyle ':apollo:example:*:*:root_indicator:*' bg_color "black"
+
+# ORM - OG free GO GP NGO RDBMS CMS - CRM KDE
+zstyle ':apollo:example:core:links' enabled "true"
+zstyle ':apollo:example:*:*:core:links:*' fg_color "white"
+zstyle ':apollo:example:*:*:core:links:*' style "bold"
+zstyle ':apollo:example:*:left:core:links:top' text "╭─"
+zstyle ':apollo:example:*:left:core:links:mid' text "├─"
+zstyle ':apollo:example:*:left:core:links:str' text "│ "
+zstyle ':apollo:example:*:left:core:links:bot' text "╰─"
+zstyle ':apollo:example:*:right:core:links:top' text "─╮"
+zstyle ':apollo:example:*:right:core:links:mid' text "─┤"
+zstyle ':apollo:example:*:right:core:links:str' text " │"
+zstyle ':apollo:example:*:right:core:links:bot' text "─╯"
+zstyle ':apollo:example:*:*:core:links:none' text ""
