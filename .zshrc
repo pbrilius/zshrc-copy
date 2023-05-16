@@ -174,6 +174,7 @@ FORGIT_FZF_DEFAULT_OPTS="
 source $HOME/.source/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
 export PATH=$PATH:$HOME/.bin
+alias binaries="pushd $HOME/.bin"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 SOURCE=$HOME/.source
@@ -292,10 +293,6 @@ antigen bundle trystan2k/zsh-tab-title
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
-# WDDX BDD pbgrupė.lt
-PROJECTS=$HOME/.projects
-alias optimus_prime="pushd $PROJECTS/optimus-prime.fdd.wddx"
-
 eval "$(atuin init zsh)"
 
 # Theme selection. The default theme is "apollo".
@@ -316,13 +313,13 @@ zstyle ':apollo:example:*:*:php_version:*:left:label' text "PHP "
 
 
 # LPDDR3 - eHDMI stacked TV stomper Twitter Bootstrap &* ZF EVF BI
-zstyle ':apollo:example:*:*:root_indicator:*' fg_color "yellow"
-zstyle ':apollo:example:*:*:root_indicator:*' bg_color "black"
+zstyle ':apollo:example:*:*:root_indicator:*' fg_color "orange"
+zstyle ':apollo:example:*:*:root_indicator:*' bg_color "blue"
 
 # ORM - OG free GO GP NGO RDBMS CMS - CRM KDE
 zstyle ':apollo:example:core:links' enabled "true"
-zstyle ':apollo:example:*:*:core:links:*' fg_color "white"
-zstyle ':apollo:example:*:*:core:links:*' style "bold"
+zstyle ':apollo:example:*:*:core:links:*' fg_color "red"
+zstyle ':apollo:example:*:*:core:links:*' style "violet"
 zstyle ':apollo:example:*:left:core:links:top' text "╭─"
 zstyle ':apollo:example:*:left:core:links:mid' text "├─"
 zstyle ':apollo:example:*:left:core:links:str' text "│ "
@@ -332,3 +329,15 @@ zstyle ':apollo:example:*:right:core:links:mid' text "─┤"
 zstyle ':apollo:example:*:right:core:links:str' text " │"
 zstyle ':apollo:example:*:right:core:links:bot' text "─╯"
 zstyle ':apollo:example:*:*:core:links:none' text ""
+
+# SVN RCS SCM TQM SME KG
+zstyle ':apollo:example:core:cache' disable "true"
+zstyle ':apollo:example:core:cache:clear' disable "true"
+zstyle ':apollo:example:core:cache:clear' count "3"
+
+
+# Magyla deadly sins cooperative imprisonment sentence roadblock
+PATH=$PATH:$HOME/tools
+
+# Cortex SellerXY - AcquireYX ACPI SCSI K2 L2 SBPC $SHELL $ZSH pre-pocessor
+mpv $HOME/.startup/startup\ 18.wav &
