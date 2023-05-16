@@ -340,4 +340,6 @@ zstyle ':apollo:example:core:cache:clear' count "3"
 PATH=$PATH:$HOME/tools
 
 # Cortex SellerXY - AcquireYX ACPI SCSI K2 L2 SBPC $SHELL $ZSH pre-pocessor
-mpv $HOME/.startup/startup\ 18.wav &
+SME="$HOME/.startup"
+mpv $SME/startup\ 18.wav &
+alias startup="cd $SME"
