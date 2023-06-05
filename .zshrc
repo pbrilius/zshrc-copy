@@ -22,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="apollo"
+# ZSH_THEME="apollo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -159,6 +159,8 @@ antigen bundle brokendisk/dune-quotes
 antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
+antigen theme halfo/lambda-mod-zsh-theme.git
+
 antigen apply
 
 
@@ -294,52 +296,3 @@ ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
 eval "$(atuin init zsh)"
-
-# Theme selection. The default theme is "apollo".
-APOLLO_THEME=apollo
-
-
-# Module lists for left and right prompt. Replace the * with theme name if you want 
-# different lists for different themes, or if you need to override lists provided by a theme.
-
-zstyle ':apollo:example:core:modules:left' modules 'quota' 'public_ip' 'newline' 'root_indicator' 'context' 'dir' 'git' 'ruler'
-zstyle ':apollo:example:core:modules:right' modules 'command_execution_time' 'background_jobs' 'date' 'clock' 'status' 'newline' 'php_version'
-
-
-# USB SS COSMIC LHC ITF IB HQ
-zstyle ':apollo:example:*:*:php_version:*' fg_color "grey93"
-zstyle ':apollo:example:*:*:php_version:*' bg_color "fuchsia"
-zstyle ':apollo:example:*:*:php_version:*:left:label' text "PHP "
-
-
-# LPDDR3 - eHDMI stacked TV stomper Twitter Bootstrap &* ZF EVF BI
-zstyle ':apollo:example:*:*:root_indicator:*' fg_color "orange"
-zstyle ':apollo:example:*:*:root_indicator:*' bg_color "blue"
-
-# ORM - OG free GO GP NGO RDBMS CMS - CRM KDE
-zstyle ':apollo:example:core:links' enabled "true"
-zstyle ':apollo:example:*:*:core:links:*' fg_color "red"
-zstyle ':apollo:example:*:*:core:links:*' style "violet"
-zstyle ':apollo:example:*:left:core:links:top' text "╭─"
-zstyle ':apollo:example:*:left:core:links:mid' text "├─"
-zstyle ':apollo:example:*:left:core:links:str' text "│ "
-zstyle ':apollo:example:*:left:core:links:bot' text "╰─"
-zstyle ':apollo:example:*:right:core:links:top' text "─╮"
-zstyle ':apollo:example:*:right:core:links:mid' text "─┤"
-zstyle ':apollo:example:*:right:core:links:str' text " │"
-zstyle ':apollo:example:*:right:core:links:bot' text "─╯"
-zstyle ':apollo:example:*:*:core:links:none' text ""
-
-# SVN RCS SCM TQM SME KG
-zstyle ':apollo:example:core:cache' disable "true"
-zstyle ':apollo:example:core:cache:clear' disable "true"
-zstyle ':apollo:example:core:cache:clear' count "3"
-
-
-# Magyla deadly sins cooperative imprisonment sentence roadblock
-PATH=$PATH:$HOME/tools
-
-# Cortex SellerXY - AcquireYX ACPI SCSI K2 L2 SBPC $SHELL $ZSH pre-pocessor
-SME="$HOME/.startup"
-mpv $SME/startup\ 18.wav &
-alias startup="cd $SME"
