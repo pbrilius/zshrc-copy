@@ -5,8 +5,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -15,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="apollo"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -37,7 +44,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=4
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -84,7 +91,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -105,8 +112,8 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
 
 source $HOME/antigen.zsh
 
@@ -125,18 +132,38 @@ antigen bundle zpm-zsh/mysql-colorize
 antigen bundle voronkovich/mysql.plugin.zsh
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle voronkovich/apache2.plugin.zsh
-antigen bundle webyneter/docker-aliases.git
 antigen bundle sroze/docker-compose-zsh-plugin
-antigen bundle unixorn/docker-helpers.zshplugin
     antigen bundle voronkovich/phpcs.plugin.zsh
 antigen bundle voronkovich/phpunit.plugin.zsh
 antigen bundle molovo/tipz
 antigen bundle KasperChristensen/mylocation
 antigen bundle zpm-zsh/undollar
 
-source $HOME/.src/emoji-cli/emoji-cli.zsh
-
 antigen bundle 'wfxr/forgit'
+
+# VEVO - Ubuntu LTS DE franchise
+antigen bundle ael-code/zsh-colored-man-pages
+antigen bundle evanthegrayt/vagrant-box-wrapper.git
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# pbgroup.eu Seagate Expansion pop-os NAZ &* SEO LJA
+antigen bundle zpm-zsh/colorize
+antigen bundle sineto/web-search
+antigen bundle le0me55i/zsh-systemd
+antigen bundle gepoch/oh-my-zsh-dirstack
+antigen bundle gryffyn/mouse-status
+antigen bundle oldratlee/hacker-quotes
+antigen bundle brokendisk/dune-quotes
+antigen bundle owenvoke/quoter-zsh
+antigen bundle yous/vanilli.sh
+
+antigen theme halfo/lambda-mod-zsh-theme.git
+
+antigen apply
+
+
 FORGIT_FZF_DEFAULT_OPTS="
 --exact
 --border
@@ -145,35 +172,43 @@ FORGIT_FZF_DEFAULT_OPTS="
 --height '80%'
 "
 
-antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle evanthegrayt/vagrant-box-wrapper.git
 
-antigen bundle psprint/zsh-morpho
+source $HOME/.source/emoji-cli/emoji-cli.zsh
+# ECTS Economics & Business Economics
+export PATH=$PATH:$HOME/.bin
+alias binaries="pushd $HOME/.bin"
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
-zstyle ":morpho" screen-saver "zblank" # select screen saver "zmorpho"; available: zmorpho, zmandelbrot, zblank, pmorpho
-                                        # this  can also be a command, e.g. "cmatrix"
-zstyle ":morpho" arguments "-s"         # arguments given to screen saver program; -s - every key press ends
-zstyle ":morpho" delay "60"            # 5 minutes before screen saver starts
-zstyle ":morpho" check-interval "15"    # check every 1 minute if to run screen saver
+SOURCE=$HOME/.source
+alias src="pushd $SOURCE"
 
+# Target market virtually hosted web apps
+VHOSTS=/var/www/vhosts
+export WORK=$VHOSTS
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+alias work="pushd $WORK"
 
-# Load the theme.
-antigen theme romkatv/powerlevel10k
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Tell Antigen that you're done.
-antigen apply
+# target market HQ MVC - CDN
+export TARGET=$HOME/.target
+alias target="pushd $TARGET"
+# node-js apprehension &comprehension
+export PATH=$TARGET/node-v19.4.0-linux-x64/bin:$PATH
+
+# $ZSH prerequisites #SCSS
+export FORGIT_FZF_DEFAULT_OPTS
+
+CFLAGS="-Og -march=bdver4 -pipe"
+CXXFLAGS=$CFLAGS
+    export PHPBREW_SET_PROMPT=1
+    export PHPBREW_RC_ENABLE=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias ls='lsd'
 
@@ -182,21 +217,82 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-
-# ECTS Economics & Business Economics
-PATH=$PATH:$HOME/.bin
-PATH=$PATH:$HOME/.apps
-PATH=$PATH:$HOME/.config/composer/vendor/bin
-PATH=$PATH:$HOME/tools
-
-alias src="pushd $HOME/.src"
-
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+# GDP - TQM dormroom tenant apps
+APPS=$HOME/.apps
+alias apps="cd $APPS";
 
 
-# Target market virtual hosts
-VHOSTS=/var/www/vhosts
-alias vhosts="pushd $VHOSTS"
+# neoliberal digital analogue to Itesta - wearepogo.co.uk
+alias namai="dirs -c; pushd $HOME"
 
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# multi-party singular noise-maker purpose folder of food & drink
+HTML=/var/www/html
+alias maistas="pushd $HTML"
+
+# LR ipeachment aversion oer VEB EVF
+antigen bundle zsh-users/zsh-completions
+antigen bundle chrissicool/zsh-256color
+PATH=$PATH:$HOME/.cargo/bin
+antigen bundle ellie/atuin@main
+
+autoload -U add-zsh-hook
+
+export ATUIN_SESSION=$(atuin uuid)
+export ATUIN_HISTORY="atuin history list"
+
+_atuin_preexec() {
+    local id
+    id=$(atuin history start -- "$1")
+    export ATUIN_HISTORY_ID="$id"
+}
+
+_atuin_precmd() {
+    local EXIT="$?"
+
+    [[ -z "${ATUIN_HISTORY_ID}" ]] && return
+
+    (RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) >/dev/null 2>&1
+}
+
+_atuin_search() {
+    emulate -L zsh
+    zle -I
+
+    # Switch to cursor mode, then back to application
+    echoti rmkx
+    # swap stderr and stdout, so that the tui stuff works
+    # TODO: not this
+    # shellcheck disable=SC2048
+    output=$(RUST_LOG=error atuin search $* -i -- $BUFFER 3>&1 1>&2 2>&3)
+    echoti smkx
+
+    if [[ -n $output ]]; then
+        RBUFFER=""
+        LBUFFER=$output
+    fi
+
+    zle reset-prompt
+}
+
+_atuin_up_search() {
+    _atuin_search --shell-up-key-binding
+}
+
+add-zsh-hook preexec _atuin_preexec
+add-zsh-hook precmd _atuin_precmd
+
+zle -N _atuin_search_widget _atuin_search
+zle -N _atuin_up_search_widget _atuin_up_search
+
+bindkey '^r' _atuin_search_widget
+bindkey '^[[A' _atuin_up_search_widget
+bindkey '^[OA' _atuin_up_search_widget
+
+antigen bundle wuotr/zsh-plugin-vscode
+antigen bundle trystan2k/zsh-tab-title
+
+ZSH_TAB_TITLE_ONLY_FOLDER=true
+ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
+
+eval "$(atuin init zsh)"
