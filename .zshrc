@@ -1,17 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -148,9 +134,14 @@ antigen bundle evanthegrayt/vagrant-box-wrapper.git
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+#EVF renovacijos pagrindai ir mėginiai
+export PHPBREW_SET_PROMPT=1
+export PHPBREW_RC_ENABLE=1
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
+
 # pbgroup.eu Seagate Expansion pop-os NAZ &* SEO LJA
 antigen bundle zpm-zsh/colorize
-antigen bundle sineto/web-search
 antigen bundle le0me55i/zsh-systemd
 antigen bundle gepoch/oh-my-zsh-dirstack
 antigen bundle gryffyn/mouse-status
@@ -201,8 +192,6 @@ export FORGIT_FZF_DEFAULT_OPTS
 
 CFLAGS="-Og -march=bdver4 -pipe"
 CXXFLAGS=$CFLAGS
-    export PHPBREW_SET_PROMPT=1
-    export PHPBREW_RC_ENABLE=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -221,6 +210,8 @@ alias lt='ls --tree'
 APPS=$HOME/.apps
 alias apps="cd $APPS";
 
+# phive toolkit
+export PATH="$PATH:$HOME/tools"
 
 # neoliberal digital analogue to Itesta - wearepogo.co.uk
 alias namai="dirs -c; pushd $HOME"
@@ -296,3 +287,11 @@ ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
 eval "$(atuin init zsh)"
+
+# LJA fallen Canonical Ubuntu SD pop-os initiative
+PACKS="/opt/packs"
+alias pagalvė="pushd $PACKS"
+
+WORK="$VHOSTS"
+HOMEWORK="popd $HOME; pushd $WORK; cd ./namų-darbai"
+alias namų_darbai="$HOMEWORK"
