@@ -295,3 +295,10 @@ alias pagalvė="pushd $PACKS"
 WORK="$VHOSTS"
 HOMEWORK="popd $HOME; pushd $WORK; cd ./namų-darbai"
 alias namų_darbai="$HOMEWORK"
+
+# AE impeachmetn super-strategy
+APXS_ENV="/etc/apache2/"
+SITES_AVAILABLE="$APXS_ENV/sites-available"
+
+# Regular virtual hosts
+alias ae_fp_wddx="dirs -c; pushd $HOMEWORK/ae.fp.wddx"
