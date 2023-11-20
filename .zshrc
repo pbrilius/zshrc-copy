@@ -150,10 +150,11 @@ antigen bundle brokendisk/dune-quotes
 antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
-antigen theme halfo/lambda-mod-zsh-theme.git
-
 antigen apply
 
+# CITIZEN
+autoload -U promptinit && promptinit
+prompt pure
 
 FORGIT_FZF_DEFAULT_OPTS="
 --exact
@@ -301,4 +302,8 @@ APXS_ENV="/etc/apache2/"
 SITES_AVAILABLE="$APXS_ENV/sites-available"
 
 # Regular virtual hosts
-alias ae_fp_wddx="dirs -c; pushd $HOMEWORK/ae.fp.wddx"
+
+## Homework - college stupidity vanity fair...
+alias ae_fp_soap="dirs -c; pushd $HOMEWORK/ae.fp.wddx"
+alias tsrm="dirs -c; pushd $HOMEWORK/skeleton"
+alias lhc-lhd="dirs -c; pushd $HOMEWORK/lhc.fp.wddx"
