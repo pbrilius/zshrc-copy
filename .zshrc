@@ -159,7 +159,7 @@ antigen bundle brokendisk/dune-quotes
 antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
-antigen theme halfo/lambda-mod-zsh-theme.git
+antigen theme spaceship-prompt/spaceship-prompt
 
 antigen apply
 
@@ -173,7 +173,7 @@ FORGIT_FZF_DEFAULT_OPTS="
 "
 
 
-source $HOME/.source/emoji-cli/emoji-cli.zsh
+source $HOME/.src/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
 export PATH=$PATH:$HOME/.bin
 alias binaries="pushd $HOME/.bin"
@@ -234,65 +234,11 @@ alias maistas="pushd $HTML"
 antigen bundle zsh-users/zsh-completions
 antigen bundle chrissicool/zsh-256color
 PATH=$PATH:$HOME/.cargo/bin
-antigen bundle ellie/atuin@main
 
 autoload -U add-zsh-hook
-
-export ATUIN_SESSION=$(atuin uuid)
-export ATUIN_HISTORY="atuin history list"
-
-_atuin_preexec() {
-    local id
-    id=$(atuin history start -- "$1")
-    export ATUIN_HISTORY_ID="$id"
-}
-
-_atuin_precmd() {
-    local EXIT="$?"
-
-    [[ -z "${ATUIN_HISTORY_ID}" ]] && return
-
-    (RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) >/dev/null 2>&1
-}
-
-_atuin_search() {
-    emulate -L zsh
-    zle -I
-
-    # Switch to cursor mode, then back to application
-    echoti rmkx
-    # swap stderr and stdout, so that the tui stuff works
-    # TODO: not this
-    # shellcheck disable=SC2048
-    output=$(RUST_LOG=error atuin search $* -i -- $BUFFER 3>&1 1>&2 2>&3)
-    echoti smkx
-
-    if [[ -n $output ]]; then
-        RBUFFER=""
-        LBUFFER=$output
-    fi
-
-    zle reset-prompt
-}
-
-_atuin_up_search() {
-    _atuin_search --shell-up-key-binding
-}
-
-add-zsh-hook preexec _atuin_preexec
-add-zsh-hook precmd _atuin_precmd
-
-zle -N _atuin_search_widget _atuin_search
-zle -N _atuin_up_search_widget _atuin_up_search
-
-bindkey '^r' _atuin_search_widget
-bindkey '^[[A' _atuin_up_search_widget
-bindkey '^[OA' _atuin_up_search_widget
 
 antigen bundle wuotr/zsh-plugin-vscode
 antigen bundle trystan2k/zsh-tab-title
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
-
-eval "$(atuin init zsh)"
