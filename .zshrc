@@ -1,3 +1,17 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -134,14 +148,9 @@ antigen bundle evanthegrayt/vagrant-box-wrapper.git
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-#EVF renovacijos pagrindai ir mėginiai
-export PHPBREW_SET_PROMPT=1
-export PHPBREW_RC_ENABLE=1
-
-[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
-
 # pbgroup.eu Seagate Expansion pop-os NAZ &* SEO LJA
 antigen bundle zpm-zsh/colorize
+antigen bundle sineto/web-search
 antigen bundle le0me55i/zsh-systemd
 antigen bundle gepoch/oh-my-zsh-dirstack
 antigen bundle gryffyn/mouse-status
@@ -150,11 +159,10 @@ antigen bundle brokendisk/dune-quotes
 antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
+antigen theme spaceship-prompt/spaceship-prompt
+
 antigen apply
 
-# CITIZEN
-autoload -U promptinit && promptinit
-prompt pure
 
 FORGIT_FZF_DEFAULT_OPTS="
 --exact
@@ -165,7 +173,7 @@ FORGIT_FZF_DEFAULT_OPTS="
 "
 
 
-source $HOME/.source/emoji-cli/emoji-cli.zsh
+source $HOME/.src/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
 export PATH=$PATH:$HOME/.bin
 alias binaries="pushd $HOME/.bin"
@@ -193,6 +201,8 @@ export FORGIT_FZF_DEFAULT_OPTS
 
 CFLAGS="-Og -march=bdver4 -pipe"
 CXXFLAGS=$CFLAGS
+    export PHPBREW_SET_PROMPT=1
+    export PHPBREW_RC_ENABLE=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -211,8 +221,6 @@ alias lt='ls --tree'
 APPS=$HOME/.apps
 alias apps="cd $APPS";
 
-# phive toolkit
-export PATH="$PATH:$HOME/tools"
 
 # neoliberal digital analogue to Itesta - wearepogo.co.uk
 alias namai="dirs -c; pushd $HOME"
@@ -226,84 +234,11 @@ alias maistas="pushd $HTML"
 antigen bundle zsh-users/zsh-completions
 antigen bundle chrissicool/zsh-256color
 PATH=$PATH:$HOME/.cargo/bin
-antigen bundle ellie/atuin@main
 
 autoload -U add-zsh-hook
-
-export ATUIN_SESSION=$(atuin uuid)
-export ATUIN_HISTORY="atuin history list"
-
-_atuin_preexec() {
-    local id
-    id=$(atuin history start -- "$1")
-    export ATUIN_HISTORY_ID="$id"
-}
-
-_atuin_precmd() {
-    local EXIT="$?"
-
-    [[ -z "${ATUIN_HISTORY_ID}" ]] && return
-
-    (RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) >/dev/null 2>&1
-}
-
-_atuin_search() {
-    emulate -L zsh
-    zle -I
-
-    # Switch to cursor mode, then back to application
-    echoti rmkx
-    # swap stderr and stdout, so that the tui stuff works
-    # TODO: not this
-    # shellcheck disable=SC2048
-    output=$(RUST_LOG=error atuin search $* -i -- $BUFFER 3>&1 1>&2 2>&3)
-    echoti smkx
-
-    if [[ -n $output ]]; then
-        RBUFFER=""
-        LBUFFER=$output
-    fi
-
-    zle reset-prompt
-}
-
-_atuin_up_search() {
-    _atuin_search --shell-up-key-binding
-}
-
-add-zsh-hook preexec _atuin_preexec
-add-zsh-hook precmd _atuin_precmd
-
-zle -N _atuin_search_widget _atuin_search
-zle -N _atuin_up_search_widget _atuin_up_search
-
-bindkey '^r' _atuin_search_widget
-bindkey '^[[A' _atuin_up_search_widget
-bindkey '^[OA' _atuin_up_search_widget
 
 antigen bundle wuotr/zsh-plugin-vscode
 antigen bundle trystan2k/zsh-tab-title
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
-
-eval "$(atuin init zsh)"
-
-# LJA fallen Canonical Ubuntu SD pop-os initiative
-PACKS="/opt/packs"
-alias pagalvė="pushd $PACKS"
-
-WORK="$VHOSTS"
-HOMEWORK="popd $HOME; pushd $WORK; cd ./namų-darbai"
-alias namų_darbai="$HOMEWORK"
-
-# AE impeachmetn super-strategy
-APXS_ENV="/etc/apache2/"
-SITES_AVAILABLE="$APXS_ENV/sites-available"
-
-# Regular virtual hosts
-
-## Homework - college stupidity vanity fair...
-alias ae_fp_soap="dirs -c; pushd $HOMEWORK/ae.fp.wddx"
-alias tsrm="dirs -c; pushd $HOMEWORK/skeleton"
-alias lhc-lhd="dirs -c; pushd $HOMEWORK/lhc.fp.wddx"
