@@ -179,7 +179,7 @@ export PATH=$PATH:$HOME/.bin
 alias binaries="pushd $HOME/.bin"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
-SOURCE=$HOME/.source
+SOURCE=$HOME/.src
 alias src="pushd $SOURCE"
 
 # Target market virtually hosted web apps
