@@ -242,3 +242,6 @@ antigen bundle trystan2k/zsh-tab-title
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
+
+# DOCS
+alias docs="pushd $HOME/Dokumentai"
