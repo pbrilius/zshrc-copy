@@ -154,12 +154,10 @@ antigen bundle sineto/web-search
 antigen bundle le0me55i/zsh-systemd
 antigen bundle gepoch/oh-my-zsh-dirstack
 antigen bundle gryffyn/mouse-status
-antigen bundle oldratlee/hacker-quotes
-antigen bundle brokendisk/dune-quotes
-antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
-antigen theme spaceship-prompt/spaceship-prompt
+# antigen theme spaceship-prompt/spaceship-prompt
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
@@ -193,8 +191,6 @@ alias work="pushd $WORK"
 # target market HQ MVC - CDN
 export TARGET=$HOME/.target
 alias target="pushd $TARGET"
-# node-js apprehension &comprehension
-export PATH=$TARGET/node-v19.4.0-linux-x64/bin:$PATH
 
 # $ZSH prerequisites #SCSS
 export FORGIT_FZF_DEFAULT_OPTS
@@ -245,3 +241,8 @@ ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
 # DOCS
 alias docs="pushd $HOME/Dokumentai"
+
+eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
