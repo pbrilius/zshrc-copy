@@ -143,20 +143,17 @@ antigen bundle 'wfxr/forgit'
 
 # VEVO - Ubuntu LTS DE franchise
 antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle evanthegrayt/vagrant-box-wrapper.git
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # pbgroup.eu Seagate Expansion pop-os NAZ &* SEO LJA
 antigen bundle zpm-zsh/colorize
-antigen bundle sineto/web-search
 antigen bundle le0me55i/zsh-systemd
 antigen bundle gepoch/oh-my-zsh-dirstack
 antigen bundle gryffyn/mouse-status
 antigen bundle yous/vanilli.sh
 
-# antigen theme spaceship-prompt/spaceship-prompt
 antigen theme romkatv/powerlevel10k
 
 antigen apply
