@@ -44,7 +44,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=4
+export UPDATE_ZSH_DAYS=3
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -112,8 +112,8 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
+alias zshconfig="nano $HOME/.zshrc"
+alias ohmyzsh="nano $HOME/.oh-my-zsh"
 
 source $HOME/antigen.zsh
 
@@ -122,9 +122,6 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
 antigen bundle command-not-found
 
 # E565 LAMP stack target market
@@ -194,8 +191,6 @@ export FORGIT_FZF_DEFAULT_OPTS
 
 CFLAGS="-Og -march=bdver4 -pipe"
 CXXFLAGS=$CFLAGS
-    export PHPBREW_SET_PROMPT=1
-    export PHPBREW_RC_ENABLE=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -239,7 +234,7 @@ ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 # DOCS
 alias docs="pushd $HOME/Dokumentai"
 
-eval "$(starship init zsh)"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
