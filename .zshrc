@@ -44,7 +44,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=4
+export UPDATE_ZSH_DAYS=3
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -112,8 +112,8 @@ export ARCHFLAGS="-arch x86_64 -march bdver4"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
+alias zshconfig="nano $HOME/.zshrc"
+alias ohmyzsh="nano $HOME/.oh-my-zsh"
 
 source $HOME/antigen.zsh
 
@@ -122,9 +122,6 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
 antigen bundle command-not-found
 
 # E565 LAMP stack target market
@@ -143,23 +140,18 @@ antigen bundle 'wfxr/forgit'
 
 # VEVO - Ubuntu LTS DE franchise
 antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle evanthegrayt/vagrant-box-wrapper.git
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # pbgroup.eu Seagate Expansion pop-os NAZ &* SEO LJA
 antigen bundle zpm-zsh/colorize
-antigen bundle sineto/web-search
 antigen bundle le0me55i/zsh-systemd
 antigen bundle gepoch/oh-my-zsh-dirstack
 antigen bundle gryffyn/mouse-status
-antigen bundle oldratlee/hacker-quotes
-antigen bundle brokendisk/dune-quotes
-antigen bundle owenvoke/quoter-zsh
 antigen bundle yous/vanilli.sh
 
-antigen theme spaceship-prompt/spaceship-prompt
+antigen theme romkatv/powerlevel10k
 
 antigen apply
 
@@ -179,7 +171,7 @@ export PATH=$PATH:$HOME/.bin
 alias binaries="pushd $HOME/.bin"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
-SOURCE=$HOME/.source
+SOURCE=$HOME/.src
 alias src="pushd $SOURCE"
 
 # Target market virtually hosted web apps
@@ -193,16 +185,12 @@ alias work="pushd $WORK"
 # target market HQ MVC - CDN
 export TARGET=$HOME/.target
 alias target="pushd $TARGET"
-# node-js apprehension &comprehension
-export PATH=$TARGET/node-v19.4.0-linux-x64/bin:$PATH
 
 # $ZSH prerequisites #SCSS
 export FORGIT_FZF_DEFAULT_OPTS
 
 CFLAGS="-Og -march=bdver4 -pipe"
 CXXFLAGS=$CFLAGS
-    export PHPBREW_SET_PROMPT=1
-    export PHPBREW_RC_ENABLE=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -242,3 +230,11 @@ antigen bundle trystan2k/zsh-tab-title
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
+
+# DOCS
+alias docs="pushd $HOME/Dokumentai"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
