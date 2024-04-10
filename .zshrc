@@ -180,6 +180,9 @@ export PATH=$PATH:$HOME/.config/composer/vendor/bin
 SOURCE=$HOME/.src
 alias src="pushd $SOURCE"
 
+PROXY=$HOME/.oss-derbis
+alias proxy="pushd $PROXY"
+
 # Target market virtually hosted web apps
 VHOSTS=/var/www/vhosts
 export WORK=$VHOSTS
@@ -285,3 +288,10 @@ chpwd_functions=(${chpwd_functions[@]} "_zoxide_hook")
 
 # Google Go
 export PATH=$PATH:/usr/local/go/bin
+
+# SSL SSE TLS
+STEAM="Steam"
+alias smėlio-dėžė="pushd $PROXY/$STEAM;"
+
+# JQL
+export PATH="$PATH:$HOME/tools"
