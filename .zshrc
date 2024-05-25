@@ -155,7 +155,6 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle chrissicool/zsh-256color
 
 antigen bundle wuotr/zsh-plugin-vscode
-antigen bundle trystan2k/zsh-tab-title
 
 antigen theme romkatv/powerlevel10k
 
@@ -173,8 +172,6 @@ FORGIT_FZF_DEFAULT_OPTS="
 
 source $HOME/.src/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
-export PATH=$PATH:$HOME/.bin
-alias binaries="pushd $HOME/.bin"
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 SOURCE=$HOME/.src
