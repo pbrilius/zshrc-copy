@@ -174,10 +174,10 @@ source $HOME/.src/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
-SOURCE=$HOME/.src
+SOURCE="$HOME/.src"
 alias src="pushd $SOURCE"
 
-PROXY=$HOME/.oss-derbis
+PROXY="$HOME/.oss-derbis"
 alias proxy="pushd $PROXY"
 
 # Target market virtually hosted web apps
@@ -189,7 +189,7 @@ alias work="pushd $WORK"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # target market HQ MVC - CDN
-export TARGET=$HOME/.target
+export TARGET="$HOME/.target"
 alias target="pushd $TARGET"
 
 # $ZSH prerequisites #SCSS
@@ -212,7 +212,7 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 # GDP - TQM dormroom tenant apps
-APPS=$HOME/.apps
+APPS="$HOME/.apps"
 alias apps="cd $APPS";
 
 
@@ -225,7 +225,7 @@ HTML=/var/www/html
 alias maistas="pushd $HTML"
 
 # LR ipeachment aversion oer VEB EVF
-PATH=$PATH:$HOME/.cargo/bin
+PATH="$PATH:$HOME/.cargo/bin"
 
 autoload -U add-zsh-hook
 
@@ -284,7 +284,7 @@ _zoxide_hook() {
 chpwd_functions=(${chpwd_functions[@]} "_zoxide_hook")
 
 # Google Go
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
 
 # SSL SSE TLS
 STEAM="Steam"
