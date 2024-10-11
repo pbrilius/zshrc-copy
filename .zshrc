@@ -129,7 +129,6 @@ antigen bundle zpm-zsh/mysql-colorize
 antigen bundle voronkovich/mysql.plugin.zsh
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle voronkovich/apache2.plugin.zsh
-antigen bundle sroze/docker-compose-zsh-plugin
     antigen bundle voronkovich/phpcs.plugin.zsh
 antigen bundle voronkovich/phpunit.plugin.zsh
 antigen bundle molovo/tipz
@@ -154,46 +153,28 @@ antigen bundle yous/vanilli.sh
 antigen bundle zsh-users/zsh-completions
 antigen bundle chrissicool/zsh-256color
 
-antigen bundle wuotr/zsh-plugin-vscode
-
 antigen theme romkatv/powerlevel10k
 
 antigen apply
 
-
-FORGIT_FZF_DEFAULT_OPTS="
---exact
---border
---cycle
---reverse
---height '80%'
-"
-
-
-source $HOME/.src/emoji-cli/emoji-cli.zsh
 # ECTS Economics & Business Economics
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
-SOURCE="$HOME/.src"
-alias src="pushd $SOURCE"
+SOURCE="uml"
+export SRC=$SOURCE
+alias src="pushd $HOME/.$SOURCE"
 
-PROXY="$HOME/.oss-derbis"
-alias proxy="pushd $PROXY"
+source "$HOME/.$SRC/emoji-cli/emoji-cli.zsh"
 
 # Target market virtually hosted web apps
-VHOSTS=/var/www/vhosts
-export WORK=$VHOSTS
-
+VHOSTS="vhosts"
+export WORK=/var/www/$VHOSTS
 alias work="pushd $WORK"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # target market HQ MVC - CDN
-export TARGET="$HOME/.target"
+TIKSLAS="target"
+export TARGET="/opt/.$TIKSLAS"
 alias target="pushd $TARGET"
-
-# $ZSH prerequisites #SCSS
-export FORGIT_FZF_DEFAULT_OPTS
 
 CFLAGS="-Og -march=bdver4 -pipe"
 CXXFLAGS=$CFLAGS
@@ -211,84 +192,18 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 
-# GDP - TQM dormroom tenant apps
-APPS="$HOME/.apps"
-alias apps="cd $APPS";
-
-
 # neoliberal digital analogue to Itesta - wearepogo.co.uk
 alias namai="dirs -c; pushd $HOME"
 
-
 # multi-party singular noise-maker purpose folder of food & drink
-HTML=/var/www/html
+HTML="html"
+export HTML="/var/www/$HTML"
 alias maistas="pushd $HTML"
-
-# LR ipeachment aversion oer VEB EVF
-PATH="$PATH:$HOME/.cargo/bin"
 
 autoload -U add-zsh-hook
 
 ZSH_TAB_TITLE_ONLY_FOLDER=true
 ZSH_TAB_TITLE_CONCAT_FOLDER_PROCESS=true
 
-# DOCS
-alias docs="pushd $HOME/Dokumentai"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-_z_cd() {
-    cd "$@" || return "$?"
-
-    if [ "$_ZO_ECHO" = "1" ]; then
-        echo "$PWD"
-    fi
-}
-
-z() {
-    if [ "$#" -eq 0 ]; then
-        _z_cd ~
-    elif [ "$#" -eq 1 ] && [ "$1" = '-' ]; then
-        if [ -n "$OLDPWD" ]; then
-            _z_cd "$OLDPWD"
-        else
-            echo 'zoxide: $OLDPWD is not set'
-            return 1
-        fi
-    else
-        _zoxide_result="$(zoxide query -- "$@")" && _z_cd "$_zoxide_result"
-    fi
-}
-
-zi() {
-    _zoxide_result="$(zoxide query -i -- "$@")" && _z_cd "$_zoxide_result"
-}
-
-
-alias za='zoxide add'
-
-alias zq='zoxide query'
-alias zqi='zoxide query -i'
-
-alias zr='zoxide remove'
-zri() {
-    _zoxide_result="$(zoxide query -i -- "$@")" && zoxide remove "$_zoxide_result"
-}
-
-
-_zoxide_hook() {
-    zoxide add "$(pwd -L)"
-}
-
-chpwd_functions=(${chpwd_functions[@]} "_zoxide_hook")
-
-# Google Go
-export PATH="$PATH:/usr/local/go/bin"
-
-# SSL SSE TLS
-STEAM="Steam"
-alias smėlio-dėžė="pushd $PROXY/$STEAM;"
-
-# JQL
-export PATH="$PATH:$HOME/tools"
